@@ -28,14 +28,18 @@ public class App {
         List<Map<String, String>> listaDeFilmes = parser.parse(body);
 
         //Checando se a lista retornada possui 250 registros
-        System.out.println("Tamanho da Lista: "+ listaDeFilmes.size());
+        //System.out.println("Tamanho da Lista: "+ listaDeFilmes.size());
 
         //exibir e manipular os dados obtidos
         for (Map<String,String> filme : listaDeFilmes) {
+            System.out.print("Título: ");
             System.out.println(filme.get("title"));
-            System.out.println(filme.get("image"));
+            System.out.print("Nota: ");
             System.out.println(filme.get("imDbRating"));
-            System.out.println();
+            System.out.print("Link Poster: ");
+            System.out.println(filme.get("image"));
+
+            System.out.println(">------------------------------------------------------------->");
         }
 
 
