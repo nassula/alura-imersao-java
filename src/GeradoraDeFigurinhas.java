@@ -1,11 +1,8 @@
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.InputStream;
-
-import javax.imageio.ImageIO;
 
 public class GeradoraDeFigurinhas {
 
@@ -31,16 +28,15 @@ public class GeradoraDeFigurinhas {
         graphics.drawImage(imagemOriginal, 0, 0, null);
 
         // configurar a fonte
-        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 80);
-        graphics.setColor(Color.ORANGE);
+        var fonte = new Font(Font.SANS_SERIF, Font.BOLD, 64);
+        graphics.setColor(Color.YELLOW);
         graphics.setFont(fonte);
 
         // escrever uma frase na nova imagem
         graphics.drawString("TOPZERA", 100, novaAltura - 100);
 
         // escrever a nova imagem em um arquivo
-        System.out.println(nomeArquivo);
-        ImageIO.write(novaImagem, "png", new File("images/"+nomeArquivo));
+        ImageIO.write(novaImagem, "png", new File(nomeArquivo.replace(" ","-").replace(":","")));
 
     }
 
